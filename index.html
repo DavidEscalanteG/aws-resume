@@ -6,11 +6,95 @@
 -->
 <html>
 	<head>
-		<title>Massively by HTML5 UP</title>
+		<title>David Ernesto Escalante García | Portafolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#main {
+				overflow: hidden;
+			}
+
+			.sections-slider {
+				position: relative;
+				width: 100%;
+			}
+
+			.section-panel {
+				display: none;
+				width: 100%;
+				padding: 0 0 2rem 0;
+			}
+
+			.section-panel.active {
+				display: block;
+			}
+
+			.section-panel.slide-from-right {
+				animation: panelSlideFromRight 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+			}
+
+			.section-panel.slide-from-left {
+				animation: panelSlideFromLeft 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+			}
+
+			@keyframes panelSlideFromRight {
+				from {
+					opacity: 0;
+					transform: translateX(3%);
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+
+			@keyframes panelSlideFromLeft {
+				from {
+					opacity: 0;
+					transform: translateX(-3%);
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+
+			.reveal-on-scroll {
+				opacity: 0;
+				transform: translateY(26px) scale(0.98);
+				transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.25s ease;
+			}
+
+			.reveal-on-scroll.visible {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+			}
+
+			#experiencia .posts {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 0;
+				width: 100%;
+				margin: 0;
+			}
+
+			#experiencia .posts > article {
+				width: 100%;
+				margin: 0;
+			}
+
+			section.posts > article.reveal-on-scroll:hover {
+				box-shadow: 0 0.8rem 2rem rgba(33, 52, 74, 0.12);
+			}
+
+			@media screen and (max-width: 980px) {
+				#experiencia .posts {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -19,199 +103,130 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>This is<br />
-						Massively</h1>
-						<p>A free, fully responsive HTML5 + CSS3 site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
-						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>.</p>
+						<h1>David Ernesto<br />
+						Escalante García</h1>
+						<p>Estudiante de Ingeniería de Software | Desarrollador de Videojuegos</p>
 						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+							<li><a href="#presentacion" data-section="presentacion" class="button icon solid solo fa-arrow-down">Continuar</a></li>
 						</ul>
 					</div>
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Massively</a>
+						<a href="index.html" class="logo">David Escalante</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">This is Massively</a></li>
-							<li><a href="generic.html">Generic Page</a></li>
-							<li><a href="elements.html">Elements Reference</a></li>
+							<li class="active"><a href="#presentacion" data-section="presentacion">Presentación</a></li>
+							<li><a href="#educacion" data-section="educacion">Educación</a></li>
+							<li><a href="#experiencia" data-section="experiencia">Experiencia y Proyectos</a></li>
 						</ul>
 						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://github.com/DavidEscalanteG" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
+						<div class="sections-slider" id="sections-slider">
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h2><a href="#">And this is a<br />
-									massive headline</a></h2>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
-								</header>
-								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="#" class="button large">Full Story</a></li>
-								</ul>
-							</article>
+							<section class="section-panel active" id="presentacion">
+								<article class="post featured">
+									<header class="major">
+										<span class="date">Sección 1 · Presentación</span>
+										<h2><a href="#">Estudiante de Ingeniería de Software<br />
+										y Desarrollador de Videojuegos</a></h2>
+										<p>Estudiante de 8° semestre de la Licenciatura en Ingeniería de Software en la Universidad Autónoma de Yucatán (UADY). Apasionado por la lógica, la programación orientada a objetos y el desarrollo de videojuegos.</p>
+									</header>
+									<a href="#" class="image main"><img src="./images/profile.jpg" alt="Foto de perfil de David Ernesto Escalante García" /></a>
+								</article>
+							</section>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<span class="date">April 24, 2017</span>
-										<h2><a href="#">Sed magna<br />
-										ipsum faucibus</a></h2>
+							<section class="section-panel" id="educacion">
+								<article class="post">
+									<header class="major">
+										<span class="date">Sección 2 · Educación</span>
+										<h2><a href="#">Formación Académica y Cursos Relevantes</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
+									<p><strong>Licenciatura en Ingeniería de Software (8° Semestre)</strong> - Universidad Autónoma de Yucatán (UADY), Facultad de Matemáticas.</p>
+									<h3>Cursos y certificaciones relevantes</h3>
+									<ul>
+										<li>AWS Academy Learner Lab (Arquitectura en la Nube).</li>
+										<li>Google Cloud Engineering (Materia optativa).</li>
+										<li>Curso de Salesforce (Desarrollo de proyecto base para administración de eventos).</li>
 									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 22, 2017</span>
-										<h2><a href="#">Primis eget<br />
-										imperdiet lorem</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 18, 2017</span>
-										<h2><a href="#">Ante mattis<br />
-										interdum dolor</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 14, 2017</span>
-										<h2><a href="#">Tempus sed<br />
-										nulla imperdiet</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 11, 2017</span>
-										<h2><a href="#">Odio magna<br />
-										sed consectetur</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 7, 2017</span>
-										<h2><a href="#">Augue lorem<br />
-										primis vestibulum</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
+									<h3>Áreas de interés y materias destacadas</h3>
+									<ul>
+										<li>Programación Estructurada.</li>
+										<li>Programación Orientada a Objetos.</li>
+										<li>Estructura de Datos.</li>
+										<li>Teoría de Lenguajes de Programación.</li>
+										<li>Diseño de Bases de Datos.</li>
 									</ul>
 								</article>
 							</section>
 
-						<!-- Footer -->
-							<footer>
-								<div class="pagination">
-									<!--<a href="#" class="previous">Prev</a>-->
-									<a href="#" class="page active">1</a>
-									<a href="#" class="page">2</a>
-									<a href="#" class="page">3</a>
-									<span class="extra">&hellip;</span>
-									<a href="#" class="page">8</a>
-									<a href="#" class="page">9</a>
-									<a href="#" class="page">10</a>
-									<a href="#" class="next">Next</a>
-								</div>
-							</footer>
-
+							<section class="section-panel" id="experiencia">
+								<article class="post">
+									<header class="major">
+										<span class="date">Sección 3 · Experiencia y Proyectos</span>
+										<h2><a href="#">Proyectos académicos, profesionales y logros</a></h2>
+										<p>Experiencia aplicada en desarrollo de software, videojuegos, algoritmia y diseño de soluciones para entornos universitarios.</p>
+									</header>
+								</article>
+								<section class="posts">
+									<article class="reveal-on-scroll">
+										<header>
+											<span class="date">Prácticas Profesionales</span>
+											<h2><a href="#">Desarrollo de Videojuego (Godot)</a></h2>
+										</header>
+										<p>Desarrollo de una novela visual interactiva con minijuegos enfocada en el autoconocimiento y la gestión de emociones, generando un perfil psicológico del jugador.</p>
+									</article>
+									<article class="reveal-on-scroll">
+										<header>
+											<span class="date">Proyecto de Algoritmia</span>
+											<h2><a href="#">Red de Transporte "Va y Ven"</a></h2>
+										</header>
+										<p>Desarrollo de un sistema de grafos para mapear rutas y paradas del transporte público en Mérida, implementando un algoritmo para encontrar la ruta más corta entre dos puntos.</p>
+									</article>
+									<article class="reveal-on-scroll">
+										<header>
+											<span class="date">Proyecto Creativo</span>
+											<h2><a href="#">Animación 3D en Blender</a></h2>
+										</header>
+										<p>Proyecto de animación de un cubo de Rubik aplicando manipulación de objetos, fotogramas clave (keyframes) y técnicas de renderizado.</p>
+									</article>
+									<article class="reveal-on-scroll">
+										<header>
+											<span class="date">Sistemas de Gestión Universitaria</span>
+											<h2><a href="#">Diseño HCI y Mantenimiento de Software</a></h2>
+										</header>
+										<p>Diseño base (HCI) para la plataforma de citas y horarios de la Facultad de Psicología (UADY), y mantenimiento de software para un planificador de carga académica y horarios estudiantiles.</p>
+									</article>
+									<article class="reveal-on-scroll">
+										<header>
+											<span class="date">Proyecto Personal</span>
+											<h2><a href="#">Desarrollo de Videojuegos Independiente (Unity)</a></h2>
+										</header>
+										<p>Creación de un proyecto personal que adapta mecánicas de juegos móviles populares en un entorno funcional y jugable.</p>
+									</article>
+									<article class="reveal-on-scroll">
+										<header>
+											<span class="date">Logro Destacado</span>
+											<h2><a href="#">Medallista de Bronce - OMI</a></h2>
+										</header>
+										<p>Medallista de Bronce en la Olimpiada Mexicana de Informática (OMI).</p>
+									</article>
+								</section>
+							</section>
+						</div>
 					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
 
 				<!-- Copyright -->
 					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						<ul><li>&copy; David Ernesto Escalante García</li><li>Diseño: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
 
 			</div>
@@ -224,6 +239,67 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				window.addEventListener('load', function () {
+					var navLinks = document.querySelectorAll('#nav .links a[data-section], #intro a[data-section]');
+					var panels = document.querySelectorAll('.section-panel');
+					var sectionIndex = { presentacion: 0, educacion: 1, experiencia: 2 };
+					var currentSection = 'presentacion';
+
+					function activateSection(sectionId) {
+						if (!(sectionId in sectionIndex) || sectionId === currentSection) return;
+						var direction = sectionIndex[sectionId] > sectionIndex[currentSection] ? 'slide-from-right' : 'slide-from-left';
+
+						panels.forEach(function (panel) {
+							panel.classList.remove('active', 'slide-from-right', 'slide-from-left');
+						});
+
+						var nextPanel = document.getElementById(sectionId);
+						nextPanel.classList.add('active', direction);
+
+						document.querySelectorAll('#nav .links li').forEach(function (item) {
+							item.classList.remove('active');
+						});
+						document.querySelector('#nav .links a[data-section="' + sectionId + '"]').parentElement.classList.add('active');
+
+						currentSection = sectionId;
+						document.getElementById('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+						if (sectionId === 'experiencia') {
+							document.querySelectorAll('#experiencia .reveal-on-scroll').forEach(function (card) {
+								card.classList.remove('visible');
+							});
+						}
+					}
+
+					navLinks.forEach(function (link) {
+						link.addEventListener('click', function (event) {
+							event.preventDefault();
+							activateSection(link.getAttribute('data-section'));
+						});
+					});
+
+					var cards = document.querySelectorAll('.reveal-on-scroll');
+					if (!('IntersectionObserver' in window)) {
+						cards.forEach(function (card) { card.classList.add('visible'); });
+						return;
+					}
+
+					var observer = new IntersectionObserver(function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								entry.target.classList.remove('visible');
+								void entry.target.offsetWidth;
+								entry.target.classList.add('visible');
+							} else {
+								entry.target.classList.remove('visible');
+							}
+						});
+					}, { threshold: 0.15 });
+
+					cards.forEach(function (card) { observer.observe(card); });
+				});
+			</script>
 
 	</body>
 </html>
